@@ -15,5 +15,6 @@ Functionality:
 * dealing with floating point numbers.
 
 SCREENSHOTS:
+
 ![calc](https://user-images.githubusercontent.com/47063149/77639342-e5b6f780-6f58-11ea-9024-4019d72a1ea8.JPG)
 
