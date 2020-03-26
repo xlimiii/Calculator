@@ -1,0 +1,15 @@
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\bin\Debug\kalkulator_Limanowka.exe.config
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\bin\Debug\kalkulator_Limanowka.exe
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\bin\Debug\kalkulator_Limanowka.pdb
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\kalkulator_Limanowka.csprojAssemblyReference.cache
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\MainWindow.g.cs
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\App.g.cs
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\kalkulator_Limanowka_MarkupCompile.cache
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\kalkulator_Limanowka_MarkupCompile.lref
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\MainWindow.baml
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\kalkulator_Limanowka.g.resources
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\kalkulator_Limanowka.Properties.Resources.resources
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\kalkulator_Limanowka.csproj.GenerateResource.cache
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\kalkulator_Limanowka.csproj.CoreCompileInputs.cache
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\kalkulator_Limanowka.exe
+C:\Users\domin\source\repos\kalkulator_Limanowka\kalkulator_Limanowka\obj\Debug\kalkulator_Limanowka.pdb

@@ -1,0 +1,52 @@
+﻿<Window x:Class="kalkulator_Limanowka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kalkulator_Limanowka"
+        mc:Ignorable="d"
+        Title="Kalkulator Limanówka" Height="600" Width="450">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.55*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.8*"/>
+
+        </Grid.RowDefinitions>
+        <TextBox x:Name="Dzialanie" IsReadOnly="True"  TextAlignment="Right" VerticalAlignment="Bottom" FontSize="12" Background="WhiteSmoke" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4"></TextBox>
+        <TextBox x:Name="Input" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="50" Background="WhiteSmoke" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="4"></TextBox>
+        <Button x:Name="but1" Grid.Row="5" Grid.Column="0" Click="But1Clicked" Background="YellowGreen"  >1</Button>
+        <Button x:Name="but2" Grid.Row="5" Grid.Column="1" Click="But2Clicked" Background="YellowGreen" >2</Button>
+        <Button x:Name="but3" Grid.Row="5" Grid.Column="2" Click="But3Clicked" Background="YellowGreen" >3</Button>
+        <Button x:Name="but4" Grid.Row="4" Grid.Column="0" Click="But4Clicked" Background="YellowGreen" >4</Button>
+        <Button x:Name="but5" Grid.Row="4" Grid.Column="1" Click="But5Clicked" Background="YellowGreen" >5</Button>
+        <Button x:Name="but6" Grid.Row="4" Grid.Column="2" Click="But6Clicked" Background="YellowGreen" >6</Button>
+        <Button x:Name="but7" Grid.Row="3" Grid.Column="0" Click="But7Clicked" Background="YellowGreen" >7</Button>
+        <Button x:Name="but8" Grid.Row="3" Grid.Column="1" Click="But8Clicked" Background="YellowGreen" >8</Button>
+        <Button x:Name="but9" Grid.Row="3" Grid.Column="2" Click="But9Clicked" Background="YellowGreen" >9</Button>
+        <Button x:Name="but0" Grid.Row="6" Grid.Column="0" Click="But0Clicked" Background="YellowGreen" >0</Button>
+        <Button x:Name="butplus" Grid.Row="5" Grid.Column="3" Click="ButPlusClicked" Background="LimeGreen"  >+</Button>
+        <Button x:Name="butminus" Grid.Row="4" Grid.Column="3" Click="ButMinusClicked" Background="LimeGreen">-</Button>
+        <Button x:Name="butmnoz" Grid.Row="3" Grid.Column="3" Click="ButMnozClicked" Background="LimeGreen">x</Button>
+        <Button x:Name="butdziel" Grid.Row="2" Grid.Column="3" Click="ButDzielClicked" Background="LimeGreen">/</Button>
+        <Button x:Name="butdot" Grid.Row="6" Grid.Column="1" Click="ButDotClicked" Background="YellowGreen">.</Button>
+        <Button x:Name="butrowna" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Click="ButRownClicked" Background="LimeGreen" >=</Button>
+        <Button x:Name="butoff" Grid.Row="2" Grid.Column="0" Click="ButOffClicked" Background="Gray" >OFF</Button>
+        <Button x:Name="butce" Grid.Row="2" Grid.Column="1" Click="ButCeClicked" Background="Gray" >CE</Button>
+        <Button x:Name="butznak" Grid.Row="2" Grid.Column="2" Click="ButZnakClicked" Background="LimeGreen" >+/-</Button>
+
+
+    </Grid>
+</Window>
