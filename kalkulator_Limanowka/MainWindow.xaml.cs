@@ -669,6 +669,7 @@ namespace kalkulator_Limanowka
             {
                 this.Input.Text = "";
                 isOperatorClicked = false;
+                this.Dzialanie.Text += dzialanie;
                 this.Input.Text += "0";
             }
             else
@@ -684,6 +685,12 @@ namespace kalkulator_Limanowka
             {
                 isCalculated = false;
                 this.Dzialanie.Text = "";
+            }
+            if (isOperatorClicked == true)
+            {
+                this.Dzialanie.Text += dzialanie;
+                this.Input.Text = "";
+                isOperatorClicked = false;
             }
             if (isCommaClicked == false)
             {
