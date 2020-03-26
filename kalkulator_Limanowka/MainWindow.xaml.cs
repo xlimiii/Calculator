@@ -103,6 +103,7 @@ namespace kalkulator_Limanowka
                 }
                 isOperatorClicked = false;
                 isCalculated = true;
+                num1 = 0;
             }
 
         }
@@ -315,7 +316,7 @@ namespace kalkulator_Limanowka
             }
             else
             {
-                if (num1 == 0)
+                if (num1 == 0 )
                 {
                     dzialanie = '*';
                     try
