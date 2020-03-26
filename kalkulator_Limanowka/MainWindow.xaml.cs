@@ -130,10 +130,15 @@ namespace kalkulator_Limanowka
                 isCalculated = false;
                 this.Dzialanie.Text = "";
             }
+            
             if (num2 == 0 && dzialanie == ' ' && this.Input.Text != "")
             {
                 num1 = Convert.ToDouble(this.Input.Text)*(-1);
                 this.Input.Text = Convert.ToString(num1);
+            }
+            else if (num1 == 0)
+            {
+                num1 = 0;
             }
             else if (dzialanie != 0)
             {
