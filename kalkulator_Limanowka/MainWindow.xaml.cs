@@ -465,8 +465,9 @@ namespace kalkulator_Limanowka
                 }
             }
         }
-        private void But1Clicked(object s, RoutedEventArgs e)
+        private void ButNumClicked(object s, RoutedEventArgs e)
         {
+            Button b = (Button)s;
             if (isCalculated == true)
             {
                 isCalculated = false;
@@ -477,208 +478,18 @@ namespace kalkulator_Limanowka
                 this.Dzialanie.Text += dzialanie;
                 this.Input.Text = "";
                 isOperatorClicked = false;
-                this.Input.Text += "1";
+                this.Input.Text += b.Content.ToString();
+
             }
             else
             {
-                this.Input.Text += "1";
+                this.Input.Text += b.Content.ToString();
                 isOperatorClicked = false;
             }
+           
 
         }
-        private void But2Clicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            if (isOperatorClicked == true)
-            {
-                this.Dzialanie.Text += dzialanie;
-                this.Input.Text = "";
-                isOperatorClicked = false;
-                this.Input.Text += "2";
-            }
-            else
-            {
-                this.Input.Text += "2";
-                isOperatorClicked = false;
-            }
-
-        }
-        private void But3Clicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            if (isOperatorClicked == true)
-            {
-                this.Dzialanie.Text += dzialanie;
-
-                this.Input.Text = "";
-                isOperatorClicked = false;
-                this.Input.Text += "3";
-            }
-            else
-            {
-                this.Input.Text += "3";
-                isOperatorClicked = false;
-            }
-
-        }
-        private void But4Clicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            if (isOperatorClicked == true)
-            {
-                this.Dzialanie.Text += dzialanie;
-
-                this.Input.Text = "";
-                isOperatorClicked = false;
-                this.Input.Text += "4";
-            }
-            else
-            {
-                this.Input.Text += "4";
-                isOperatorClicked = false;
-            }
-
-        }
-        private void But5Clicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            if (isOperatorClicked == true)
-            {
-                this.Dzialanie.Text += dzialanie;
-
-                this.Input.Text = "";
-                isOperatorClicked = false;
-                this.Input.Text += "5";
-            }
-            else
-            {
-                this.Input.Text += "5";
-                isOperatorClicked = false;
-            }
-        }
-        private void But6Clicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            if (isOperatorClicked == true)
-            {
-                this.Dzialanie.Text += dzialanie;
-
-                this.Input.Text = "";
-                isOperatorClicked = false;
-                this.Input.Text += "6";
-            }
-            else
-            {
-                this.Input.Text += "6";
-                isOperatorClicked = false;
-            }
-
-        }
-        private void But7Clicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            if (isOperatorClicked == true)
-            {
-                this.Dzialanie.Text += dzialanie;
-
-                this.Input.Text = "";
-                isOperatorClicked = false;
-                this.Input.Text += "7";
-            }
-            else
-            {
-                this.Input.Text += "7";
-                isOperatorClicked = false;
-            }
-        }
-        private void But8Clicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            if (isOperatorClicked == true)
-            {
-                this.Dzialanie.Text += dzialanie;
-
-                this.Input.Text = "";
-                isOperatorClicked = false;
-                this.Input.Text += "8";
-            }
-            else
-            {
-                this.Input.Text += "8";
-                isOperatorClicked = false;
-            }
-
-        }
-        private void But9Clicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            if (isOperatorClicked == true)
-            {
-                this.Dzialanie.Text += dzialanie;
-
-                this.Input.Text = "";
-                isOperatorClicked = false;
-                this.Input.Text += "9";
-            }
-            else
-            {
-                this.Input.Text += "9";
-                isOperatorClicked = false;
-            }
-        }
-        private void But0Clicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            if (isOperatorClicked == true)
-            {
-                this.Input.Text = "";
-                isOperatorClicked = false;
-                this.Dzialanie.Text += dzialanie;
-                this.Input.Text += "0";
-            }
-            else
-            {
-                this.Input.Text += "0";
-                isOperatorClicked = false;
-            }
-
-        }
+      
         private void ButDotClicked(object s, RoutedEventArgs e)
         {
             if (isCalculated == true)

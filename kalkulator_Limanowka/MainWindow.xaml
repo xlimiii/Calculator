@@ -27,16 +27,16 @@
         </Grid.RowDefinitions>
         <TextBox x:Name="Dzialanie" IsReadOnly="True"  TextAlignment="Right" VerticalAlignment="Bottom" FontSize="12" Background="WhiteSmoke" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4"></TextBox>
         <TextBox x:Name="Input" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="50" Background="WhiteSmoke" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="4"></TextBox>
-        <Button x:Name="but1" Grid.Row="5" Grid.Column="0" Click="But1Clicked" Background="YellowGreen"  >1</Button>
-        <Button x:Name="but2" Grid.Row="5" Grid.Column="1" Click="But2Clicked" Background="YellowGreen" >2</Button>
-        <Button x:Name="but3" Grid.Row="5" Grid.Column="2" Click="But3Clicked" Background="YellowGreen" >3</Button>
-        <Button x:Name="but4" Grid.Row="4" Grid.Column="0" Click="But4Clicked" Background="YellowGreen" >4</Button>
-        <Button x:Name="but5" Grid.Row="4" Grid.Column="1" Click="But5Clicked" Background="YellowGreen" >5</Button>
-        <Button x:Name="but6" Grid.Row="4" Grid.Column="2" Click="But6Clicked" Background="YellowGreen" >6</Button>
-        <Button x:Name="but7" Grid.Row="3" Grid.Column="0" Click="But7Clicked" Background="YellowGreen" >7</Button>
-        <Button x:Name="but8" Grid.Row="3" Grid.Column="1" Click="But8Clicked" Background="YellowGreen" >8</Button>
-        <Button x:Name="but9" Grid.Row="3" Grid.Column="2" Click="But9Clicked" Background="YellowGreen" >9</Button>
-        <Button x:Name="but0" Grid.Row="6" Grid.Column="0" Click="But0Clicked" Background="YellowGreen" >0</Button>
+        <Button x:Name="but1" Grid.Row="5" Grid.Column="0" Click="ButNumClicked" Background="YellowGreen"  >1</Button>
+        <Button x:Name="but2" Grid.Row="5" Grid.Column="1" Click="ButNumClicked" Background="YellowGreen" >2</Button>
+        <Button x:Name="but3" Grid.Row="5" Grid.Column="2" Click="ButNumClicked" Background="YellowGreen" >3</Button>
+        <Button x:Name="but4" Grid.Row="4" Grid.Column="0" Click="ButNumClicked" Background="YellowGreen" >4</Button>
+        <Button x:Name="but5" Grid.Row="4" Grid.Column="1" Click="ButNumClicked" Background="YellowGreen" >5</Button>
+        <Button x:Name="but6" Grid.Row="4" Grid.Column="2" Click="ButNumClicked" Background="YellowGreen" >6</Button>
+        <Button x:Name="but7" Grid.Row="3" Grid.Column="0" Click="ButNumClicked" Background="YellowGreen" >7</Button>
+        <Button x:Name="but8" Grid.Row="3" Grid.Column="1" Click="ButNumClicked" Background="YellowGreen" >8</Button>
+        <Button x:Name="but9" Grid.Row="3" Grid.Column="2" Click="ButNumClicked" Background="YellowGreen" >9</Button>
+        <Button x:Name="but0" Grid.Row="6" Grid.Column="0" Click="ButNumClicked" Background="YellowGreen" >0</Button>
         <Button x:Name="butplus" Grid.Row="5" Grid.Column="3" Click="ButPlusClicked" Background="LimeGreen"  >+</Button>
         <Button x:Name="butminus" Grid.Row="4" Grid.Column="3" Click="ButMinusClicked" Background="LimeGreen">-</Button>
         <Button x:Name="butmnoz" Grid.Row="3" Grid.Column="3" Click="ButMnozClicked" Background="LimeGreen">x</Button>
