@@ -23,7 +23,7 @@ namespace kalkulator_Limanowka
         private bool isCalculated = false;
         private double num1 = 0;
         private double num2 = 0;
-        private char dzialanie=' ';
+        private string dzialanie=" ";
         public MainWindow()
         {
             InitializeComponent();
@@ -57,39 +57,39 @@ namespace kalkulator_Limanowka
                     }
 
 
-                    if (dzialanie == '+')
+                    if (dzialanie == "+")
                     {
 
                         num1 = num1 + num2;
                         this.Input.Text = Convert.ToString(num1);
                         num2 = 0;
-                        dzialanie = ' ';
+                        dzialanie = " ";
 
                     }
-                    else if (dzialanie == '-')
+                    else if (dzialanie == "-")
                     {
                         num1 = num1 - num2;
                         this.Input.Text = Convert.ToString(num1);
                         num2 = 0;
-                        dzialanie = ' ';
+                        dzialanie = " ";
 
                     }
-                    else if (dzialanie == '*')
+                    else if (dzialanie == "*")
                     {
                         num1 = num1 * num2;
                         this.Input.Text = Convert.ToString(num1);
                         num2 = 0;
-                        dzialanie = ' ';
+                        dzialanie = " ";
 
                     }
-                    else if (dzialanie == '/')
+                    else if (dzialanie == "/")
                     {
                         if (num2 != 0)
                         {
                             num1 = num1 / num2;
                             this.Input.Text = Convert.ToString(num1);
                             num2 = 0;
-                            dzialanie = ' ';
+                            dzialanie = " ";
 
                         }
                         else
@@ -97,7 +97,7 @@ namespace kalkulator_Limanowka
                             this.Input.Text = "NIE DZIEL PRZEZ ZERO!";
                             num1 = 0;
                             num2 = 0;
-                            dzialanie = ' ';
+                            dzialanie = " ";
                         }
                     }
                 }
@@ -117,7 +117,7 @@ namespace kalkulator_Limanowka
             this.Input.Text = "";
             num1 = 0;
             num2 = 0;
-            dzialanie = ' ';
+            dzialanie = " ";
             isOperatorClicked = false;
             isCalculated = false;
         }
@@ -131,7 +131,7 @@ namespace kalkulator_Limanowka
                 this.Dzialanie.Text = "";
             }
             
-            if (num2 == 0 && dzialanie == ' ' && this.Input.Text != "")
+            if (num2 == 0 && dzialanie == " " && this.Input.Text != "")
             {
                 num1 = Convert.ToDouble(this.Input.Text)*(-1);
                 this.Input.Text = Convert.ToString(num1);
@@ -140,15 +140,16 @@ namespace kalkulator_Limanowka
             {
                 num1 = 0;
             }
-            else if (dzialanie != 0)
+            else if (dzialanie != " ")
             {
                 num2 = Convert.ToDouble(this.Input.Text) * (-1);
                 this.Input.Text = Convert.ToString(num2);
             }
            
         }
-        private void ButPlusClicked(object s, RoutedEventArgs e)
+        private void ButOperatorClicked(object s, RoutedEventArgs e)
         {
+            Button b = (Button)s;
             if (isCalculated == true)
             {
                 isCalculated = false;
@@ -157,13 +158,13 @@ namespace kalkulator_Limanowka
             isCommaClicked = false;
             if (isOperatorClicked == true)
             {
-                dzialanie = '+';
+                dzialanie = b.Content.ToString();
             }
             else
             {
                 if (num1 == 0)
                 {
-                    dzialanie = '+';
+                    dzialanie = "+";
                     try
                     {
                         num1 = Convert.ToDouble(this.Input.Text);
@@ -173,7 +174,7 @@ namespace kalkulator_Limanowka
                     }
                     catch
                     {
-                        dzialanie = ' ';
+                        dzialanie = " ";
                         num1 = 0;
                     }
 
@@ -184,7 +185,7 @@ namespace kalkulator_Limanowka
                     num2 = Convert.ToDouble(this.Input.Text);
                     this.Dzialanie.Text += num2;
 
-                    if (dzialanie == '+')
+                    if (dzialanie == "+")
                     {
 
                         num1 = num1 + num2;
@@ -192,21 +193,21 @@ namespace kalkulator_Limanowka
 
 
                     }
-                    else if (dzialanie == '-')
+                    else if (dzialanie == "-")
                     {
                         num1 = num1 - num2;
                         this.Input.Text = Convert.ToString(num1);
 
 
                     }
-                    else if (dzialanie == '*')
+                    else if (dzialanie == "*")
                     {
                         num1 = num1 * num2;
                         this.Input.Text = Convert.ToString(num1);
 
 
                     }
-                    else if (dzialanie == '/')
+                    else if (dzialanie == "/")
                     {
                         if (num2 != 0)
                         {
@@ -219,253 +220,16 @@ namespace kalkulator_Limanowka
                             this.Input.Text = "NIE DZIEL PRZEZ ZERO!";
                             num1 = 0;
                             num2 = 0;
-                            dzialanie = ' ';
+                            dzialanie = " ";
                         }
                     }
-                    dzialanie = '+';
+                    dzialanie = "+";
                     num2 = 0;
                 }
             }
         }
-        private void ButMinusClicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            isCommaClicked = false;
-            if (isOperatorClicked == true)
-            {
-                dzialanie = '-';
-            }
-            else
-            {
-                if (num1 == 0)
-                {
-                    dzialanie = '-';
-                    try
-                    {
-                        num1 = Convert.ToDouble(this.Input.Text);
-                        this.Dzialanie.Text += num1;
-                        isOperatorClicked = true;
-
-                    }
-                    catch
-                    {
-                        dzialanie = ' ';
-                        num1 = 0;
-                    }
-
-                }
-                else
-                {
-                    isOperatorClicked = true;
-                    num2 = Convert.ToDouble(this.Input.Text);
-                    this.Dzialanie.Text += num2;
-
-                    if (dzialanie == '+')
-                    {
-
-                        num1 = num1 + num2;
-                        this.Input.Text = Convert.ToString(num1);
-
-
-                    }
-                    else if (dzialanie == '-')
-                    {
-                        num1 = num1 - num2;
-                        this.Input.Text = Convert.ToString(num1);
-
-
-                    }
-                    else if (dzialanie == '*')
-                    {
-                        num1 = num1 * num2;
-                        this.Input.Text = Convert.ToString(num1);
-
-
-                    }
-                    else if (dzialanie == '/')
-                    {
-                        if (num2 != 0)
-                        {
-                            num1 = num1 / num2;
-                            this.Input.Text = Convert.ToString(num1);
-
-                        }
-                        else
-                        {
-                            this.Input.Text = "NIE DZIEL PRZEZ ZERO!";
-                            num1 = 0;
-                            num2 = 0;
-                            dzialanie = ' ';
-                        }
-                    }
-                    dzialanie = '-';
-                    num2 = 0;
-                }
-            }
-        }
-        private void ButMnozClicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            isCommaClicked = false;
-            if (isOperatorClicked == true)
-            {
-                dzialanie = '*';
-            }
-            else
-            {
-                if (num1 == 0 )
-                {
-                    dzialanie = '*';
-                    try
-                    {
-                        num1 = Convert.ToDouble(this.Input.Text);
-                        this.Dzialanie.Text += num1;
-                        isOperatorClicked = true;
-
-                    }
-                    catch
-                    {
-                        dzialanie = ' ';
-                        num1 = 0;
-                    }
-
-                }
-                else
-                {
-                    isOperatorClicked = true;
-                    num2 = Convert.ToDouble(this.Input.Text);
-                    this.Dzialanie.Text += num2;
-                    if (dzialanie == '+')
-                    {
-
-                        num1 = num1 + num2;
-                        this.Input.Text = Convert.ToString(num1);
-
-
-                    }
-                    else if (dzialanie == '-')
-                    {
-                        num1 = num1 - num2;
-                        this.Input.Text = Convert.ToString(num1);
-
-
-                    }
-                    else if (dzialanie == '*')
-                    {
-                        num1 = num1 * num2;
-                        this.Input.Text = Convert.ToString(num1);
-
-
-                    }
-                    else if (dzialanie == '/')
-                    {
-                        if (num2 != 0)
-                        {
-                            num1 = num1 / num2;
-                            this.Input.Text = Convert.ToString(num1);
-
-                        }
-                        else
-                        {
-                            this.Input.Text = "NIE DZIEL PRZEZ ZERO!";
-                            num1 = 0;
-                            num2 = 0;
-                            dzialanie = ' ';
-                        }
-                    }
-                    dzialanie = '*';
-                    num2 = 0;
-                }
-            }
-        }
-        private void ButDzielClicked(object s, RoutedEventArgs e)
-        {
-            if (isCalculated == true)
-            {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
-            }
-            isCommaClicked = false;
-            if (isOperatorClicked == true)
-            {
-                dzialanie = '/';
-            }
-            else
-            {
-                if (num1 == 0)
-                {
-                    dzialanie = '/';
-                    try
-                    {
-                        num1 = Convert.ToDouble(this.Input.Text);
-                        this.Dzialanie.Text += num1;
-                        isOperatorClicked = true;
-
-                    }
-                    catch
-                    {
-                        dzialanie = ' ';
-                    }
-
-                }
-                else
-                {
-                    isOperatorClicked = true;
-                    num2 = Convert.ToDouble(this.Input.Text);
-                    this.Dzialanie.Text += num2;
-
-                    if (dzialanie == '+')
-                    {
-
-                        num1 = num1 + num2;
-                        this.Input.Text = Convert.ToString(num1);
-
-
-                    }
-                    else if (dzialanie == '-')
-                    {
-                        num1 = num1 - num2;
-                        this.Input.Text = Convert.ToString(num1);
-
-
-                    }
-                    else if (dzialanie == '*')
-                    {
-                        num1 = num1 * num2;
-                        this.Input.Text = Convert.ToString(num1);
-
-
-                    }
-                    else if (dzialanie == '/')
-                    {
-                        if (num2 != 0)
-                        {
-                            num1 = num1 / num2;
-                            this.Input.Text = Convert.ToString(num1);
-
-                        }
-                        else
-                        {
-                            this.Input.Text = "NIE DZIEL PRZEZ ZERO!";
-                            num1 = 0;
-                            num2 = 0;
-                            dzialanie = ' ';
-                        }
-                    }
-                    dzialanie = '/';
-                    num2 = 0;
-                }
-            }
-        }
-        private void ButNumClicked(object s, RoutedEventArgs e)
+        
+        private void ButNumberClicked(object s, RoutedEventArgs e)
         {
             Button b = (Button)s;
             if (isCalculated == true)
