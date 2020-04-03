@@ -28,6 +28,7 @@ namespace kalkulator_Limanowka
         public MainWindow()
         {
             InitializeComponent();
+           
         }
 
         private void ButRownClicked(object s, RoutedEventArgs e)
@@ -88,7 +89,7 @@ namespace kalkulator_Limanowka
                         }
                         else
                         {
-                            this.Input.Text = "NIE DZIEL PRZEZ ZERO!";
+                            this.Input.Text = "NIE DZIEL PRZEZ 0!";
                             num1 = 0;
                             num2 = 0;
                             dzialanie = " ";
@@ -127,11 +128,16 @@ namespace kalkulator_Limanowka
             
             if (num2 == 0 && dzialanie == " " && this.Input.Text != "")
             {
-                num1 = Convert.ToDouble(this.Input.Text)*(-1);
-                this.Input.Text = Convert.ToString(num1);
-                if (Convert.ToDouble(this.Input.Text) == 0.0)
+                try
                 {
-                    isCommaClicked = false;
+                    num1 = Convert.ToDouble(this.Input.Text) * (-1);
+                    this.Input.Text = Convert.ToString(num1);
+                    if (Convert.ToDouble(this.Input.Text) == 0.0)
+                    {
+                        isCommaClicked = false;
+                    }
+                }
+                catch {
                 }
             }
             else if (num1 == 0)
@@ -159,7 +165,14 @@ namespace kalkulator_Limanowka
             }
             else
             {
-                if (num1 == 0)
+                if(num1 != 0)
+                try
+                {
+                    num2 = Convert.ToDouble(this.Input.Text);
+
+                }
+                catch { }
+                if (num1 == 0 && num2 ==0 && dzialanie!= "/")
                 {
                     dzialanie = b.Content.ToString();
                     try
@@ -203,11 +216,17 @@ namespace kalkulator_Limanowka
                         }
                         else
                         {
-                            this.Input.Text = "NIE DZIEL PRZEZ ZERO!";
+                            this.Input.Text = "NIE DZIEL PRZEZ 0!";
                             num1 = 0;
                             num2 = 0;
                             dzialanie = " ";
+                            isCalculated = true;
                         }
+                    }
+                    if (this.Dzialanie.Text.Length >= 60)
+                    {
+                        this.Dzialanie.Text = Convert.ToString(num1);
+
                     }
                     dzialanie = b.Content.ToString();
                     num2 = 0;
@@ -224,7 +243,7 @@ namespace kalkulator_Limanowka
                 this.Dzialanie.Text = "";
             }
             if (isOperatorClicked == true)
-            {
+            {   if(this.Dzialanie.Text!= "")
                 this.Dzialanie.Text += dzialanie;
                 this.Input.Text = "";
                 isOperatorClicked = false;
@@ -241,7 +260,7 @@ namespace kalkulator_Limanowka
                 }
                 catch
                 {
-                    this.Input.Text += b.Content.ToString();
+                    this.Input.Text = b.Content.ToString();
                 }
             }
             else
@@ -260,20 +279,18 @@ namespace kalkulator_Limanowka
                 }
                 catch
                 {
-                    this.Input.Text += b.Content.ToString();
+                    this.Input.Text = b.Content.ToString();
                 }
             }
         }
       
         private void ButDotClicked(object s, RoutedEventArgs e)
         {
-            if (isCalculated == true)
+            try
             {
-                isCalculated = false;
-                this.Dzialanie.Text = "";
                 double oryginal = Convert.ToDouble(this.Input.Text);
                 int doCalkowitej = (int)Convert.ToDouble(this.Input.Text);
-                if (doCalkowitej == oryginal)
+                if (doCalkowitej == oryginal && isCommaClicked != true)
                 {
                     isCommaClicked = false;
                 }
@@ -282,11 +299,22 @@ namespace kalkulator_Limanowka
                     isCommaClicked = true;
                 }
             }
+            catch {
+                if (this.Input.Text == "NIE DZIEL PRZEZ 0!")
+                    isCommaClicked = true;
+            }
+            if (isCalculated == true)
+            {
+                isCalculated = false;
+                this.Dzialanie.Text = "";
+               
+            }
             if (isOperatorClicked == true)
             {
                 this.Dzialanie.Text += dzialanie;
                 this.Input.Text = "";
                 isOperatorClicked = false;
+                isCommaClicked = false;
             }
             if (isCommaClicked == false)
             {

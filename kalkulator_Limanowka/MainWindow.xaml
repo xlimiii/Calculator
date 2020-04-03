@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kalkulator_Limanowka"
         mc:Ignorable="d"
-        Title="Kalkulator Limanówka" Height="600" Width="450">
+        Title="Kalkulator Limanówka" Height="600" Width="450" ResizeMode="NoResize" >  
     
     <Grid>
         <Grid.ColumnDefinitions>
