@@ -24,10 +24,12 @@ namespace kalkulator_Limanowka
         private double num1 = 0;
         private double num2 = 0;
         private string dzialanie=" ";
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
         private void ButRownClicked(object s, RoutedEventArgs e)
         {
             if (isCalculated == true)
@@ -56,7 +58,6 @@ namespace kalkulator_Limanowka
 
                     if (dzialanie == "+")
                     {
-
                         num1 = num1 + num2;
                         this.Input.Text = Convert.ToString(num1);
                         num2 = 0;
@@ -96,10 +97,8 @@ namespace kalkulator_Limanowka
                 }
                 isOperatorClicked = false;
                 isCalculated = true;
-                
                 num1 = 0;
             }
-
         }
         private void ButOffClicked(object s, RoutedEventArgs e)
         {
@@ -114,6 +113,7 @@ namespace kalkulator_Limanowka
             dzialanie = " ";
             isOperatorClicked = false;
             isCalculated = false;
+            isCommaClicked = false;
         }
 
 
@@ -129,6 +129,10 @@ namespace kalkulator_Limanowka
             {
                 num1 = Convert.ToDouble(this.Input.Text)*(-1);
                 this.Input.Text = Convert.ToString(num1);
+                if (Convert.ToDouble(this.Input.Text) == 0.0)
+                {
+                    isCommaClicked = false;
+                }
             }
             else if (num1 == 0)
             {
@@ -138,8 +142,7 @@ namespace kalkulator_Limanowka
             {
                 num2 = Convert.ToDouble(this.Input.Text) * (-1);
                 this.Input.Text = Convert.ToString(num2);
-            }
-           
+            }           
         }
         private void ButOperatorClicked(object s, RoutedEventArgs e)
         {
@@ -170,35 +173,26 @@ namespace kalkulator_Limanowka
                         dzialanie = " ";
                         num1 = 0;
                     }
-
                 }
                 else
                 {
                     isOperatorClicked = true;
                     num2 = Convert.ToDouble(this.Input.Text);
                     this.Dzialanie.Text += num2;
-
                     if (dzialanie == "+")
                     {
-
                         num1 = num1 + num2;
                         this.Input.Text = Convert.ToString(num1);
-
-
                     }
                     else if (dzialanie == "-")
                     {
                         num1 = num1 - num2;
                         this.Input.Text = Convert.ToString(num1);
-
-
                     }
                     else if (dzialanie == "*")
                     {
                         num1 = num1 * num2;
                         this.Input.Text = Convert.ToString(num1);
-
-
                     }
                     else if (dzialanie == "/")
                     {
@@ -206,7 +200,6 @@ namespace kalkulator_Limanowka
                         {
                             num1 = num1 / num2;
                             this.Input.Text = Convert.ToString(num1);
-
                         }
                         else
                         {
@@ -235,12 +228,40 @@ namespace kalkulator_Limanowka
                 this.Dzialanie.Text += dzialanie;
                 this.Input.Text = "";
                 isOperatorClicked = false;
-                this.Input.Text += b.Content.ToString();
+                try
+                {
+                    if (Convert.ToDouble(this.Input.Text) == 0 && isCommaClicked == false)
+                    {
+                        this.Input.Text = b.Content.ToString();
+                    }
+                    else
+                    {
+                        this.Input.Text += b.Content.ToString();
+                    }
+                }
+                catch
+                {
+                    this.Input.Text += b.Content.ToString();
+                }
             }
             else
             {
-                this.Input.Text += b.Content.ToString();
                 isOperatorClicked = false;
+                try
+                {
+                    if (Convert.ToDouble(this.Input.Text) == 0.0 && isCommaClicked==false)
+                    {
+                        this.Input.Text = b.Content.ToString();
+                    }
+                    else
+                    {
+                        this.Input.Text += b.Content.ToString();
+                    }
+                }
+                catch
+                {
+                    this.Input.Text += b.Content.ToString();
+                }
             }
         }
       
@@ -266,16 +287,13 @@ namespace kalkulator_Limanowka
                 this.Dzialanie.Text += dzialanie;
                 this.Input.Text = "";
                 isOperatorClicked = false;
-
             }
             if (isCommaClicked == false)
             {
-
                 if (isOperatorClicked == true)
                 {
                     this.Input.Text = "0.";
                     isOperatorClicked = false;
-
                 }
                 else if (this.Input.Text != "")
                 {
@@ -283,7 +301,7 @@ namespace kalkulator_Limanowka
                 }
                 else
                 {
-                    this.Input.Text += "0.";
+                    this.Input.Text = "0.";
                 }
                 isCommaClicked = true;
             }
