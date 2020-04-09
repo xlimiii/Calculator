@@ -369,7 +369,7 @@ namespace kalkulator_Limanowka
                 this.Dzialanie.Text += dzialanie;
                 this.Input.Text = "";
                 isOperatorClicked = false;
-                this.Input.Text = "0.";
+                this.Input.Text = "0,";
                 isCommaClicked = true;
 
             }
@@ -377,11 +377,11 @@ namespace kalkulator_Limanowka
             {
                 if (this.Input.Text != "")
                 {
-                    this.Input.Text += ".";
+                    this.Input.Text += ",";
                 }
                 else
                 {
-                    this.Input.Text = "0.";
+                    this.Input.Text = "0,";
                 }
                 isCommaClicked = true;
             }
